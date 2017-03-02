@@ -3,13 +3,13 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-	<title>信用卡分期年化计算器</title>
+	<title>信用卡分期年利率计算器</title>
 	<script type="text/javascript">
 		function onClick() {
 			var periods = document.getElementById("periods").value;
-// 			alert(periods);
+			alert(periods);
 			var rates = document.getElementById("rates").value;
-// 			alert(rates);
+			alert(rates);
 			var total = (24*periods*rates/(1+periods)).toFixed(2);
 // 			alert(parseInt(1)+parseInt(periods));
 			document.getElementById("total").value = total;
@@ -19,15 +19,15 @@
 <body>
 	<table>
 		<tr>
-			<td>期数</td>
+			<td>分期期数</td>
 			<td><input id="periods" type="text" name="periods"></td>
 		</tr>
 		<tr>
-			<td>费率</td>
+			<td>每期费率</td>
 			<td><input id="rates" type="text" name="rates">&nbsp;%</td>
 		</tr>
 		<tr>
-			<td>年化</td>
+			<td>年利率&nbsp;&nbsp;</td>
 			<td><input id="total" type="text" name="total">&nbsp;%</td>
 		</tr>
 		<tr>
