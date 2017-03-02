@@ -7,11 +7,8 @@
 	<script type="text/javascript">
 		function onClick() {
 			var periods = document.getElementById("periods").value;
-			alert(periods);
 			var rates = document.getElementById("rates").value;
-			alert(rates);
-			var total = (24*periods*rates/(1+periods)).toFixed(2);
-			alert(parseInt(1)+parseInt(periods));
+			var total = (24*parseInt(periods)*parseInt(rates)/(1+parseInt(periods))).toFixed(2);
 			document.getElementById("total").value = total;
 		}
 	</script>
