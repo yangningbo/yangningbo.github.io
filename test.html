@@ -8,7 +8,7 @@
 		function onClick() {
 			var periods = document.getElementById("periods").value;
 			var rates = document.getElementById("rates").value;
-			var total = (24*parseInt(periods)*parseInt(rates)/(1+parseInt(periods))).toFixed(2);
+			var total = (24*parseInt(periods)*parseFloat(rates)/(1+parseInt(periods))).toFixed(2);
 			document.getElementById("total").value = total;
 		}
 	</script>
@@ -24,7 +24,7 @@
 			<td><input id="rates" type="text" name="rates">&nbsp;%</td>
 		</tr>
 		<tr>
-			<td>年利率&nbsp;&nbsp;</td>
+			<td>&nbsp;&nbsp;年利率</td>
 			<td><input id="total" type="text" name="total">&nbsp;%</td>
 		</tr>
 		<tr>
