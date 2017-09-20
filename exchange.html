@@ -11,14 +11,17 @@
 			var cost = document.getElementById("cost").value;//C4
 			var pass_entry = document.getElementById("pass_entry").value;//C5
 
+			// C5-100*C4/C3
+			var total_income = (parseFloat(pass_entry)-100*parseFloat(cost)/parseFloat(cash_buying_rate)).toFixed(2);
 			// (C5-100*C4/C3)/(3-C3/C2)
-			var income = ((parseFloat(pass_entry)-100*parseFloat(cost)/parseFloat(cash_buying_rate))/(3-parseFloat(cash_buying_rate)/parseFloat(buying_rate))).toFixed(2);
+			var per_income = ((parseFloat(pass_entry)-100*parseFloat(cost)/parseFloat(cash_buying_rate))/(3-parseFloat(cash_buying_rate)/parseFloat(buying_rate))).toFixed(2);
 
 			// 100*C4/C3+C6
-			var total = (100*parseFloat(cost)/parseFloat(cash_buying_rate)+parseFloat(income)).toFixed(2);
+			var exchange_amount = (100*parseFloat(cost)/parseFloat(cash_buying_rate)+parseFloat(per_income)).toFixed(2);
 
-			document.getElementById("income").value = income;
-			document.getElementById("total").value = total;
+			document.getElementById("total_income").value = total_income;
+			document.getElementById("per_income").value = per_income;
+			document.getElementById("exchange_amount").value = exchange_amount;
 		}
 	</script>
 </head>
@@ -26,27 +29,31 @@
 	<table>
 		<tr>
 			<td>汇入价</td>
-			<td><input id="buying_rate" type="text" name="buying_rate" value="655.92"></td>
+			<td><input id="buying_rate" type="text" name="buying_rate" value="655.92">CNY/100USD</td>
 		</tr>
 		<tr>
 			<td>钞入价</td>
-			<td><input id="cash_buying_rate" type="text" name="cash_buying_rate" value="650.53"></td>
+			<td><input id="cash_buying_rate" type="text" name="cash_buying_rate" value="650.53">CNY/100USD</td>
 		</tr>
 		<tr>
 			<td>成&emsp;本</td>
-			<td><input id="cost" type="text" name="cost" value="67016.5"></td>
+			<td><input id="cost" type="text" name="cost" value="67016.5">CNY</td>
 		</tr>
 		<tr>
 			<td>入&emsp;账</td>
-			<td><input id="pass_entry" type="text" name="pass_entry" value="12310"></td>
+			<td><input id="pass_entry" type="text" name="pass_entry" value="12310">USD</td>
 		</tr>
 		<tr>
-			<td>收&emsp;益</td>
-			<td><input id="income" type="text" name="income"></td>
+			<td>总收益</td>
+			<td><input id="total_income" type="text" name="total_income">USD</td>
 		</tr>
 		<tr>
-			<td>总&emsp;计</td>
-			<td><input id="total" type="text" name="total"></td>
+			<td>人&emsp;均</td>
+			<td><input id="per_income" type="text" name="per_income">USD/person</td>
+		</tr>
+		<tr>
+			<td>汇&emsp;兑</td>
+			<td><input id="exchange_amount" type="text" name="exchange_amount">USD</td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="button" value="计算" onclick="onClick();"></td>
