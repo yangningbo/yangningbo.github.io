@@ -14,7 +14,8 @@
 			// C5-100*C4/C3
 			var total_income = (parseFloat(pass_entry)-100*parseFloat(cost)/parseFloat(cash_buying_rate)).toFixed(2);
 			// (C5-100*C4/C3)/(3-C3/C2)
-			var per_income = ((parseFloat(pass_entry)-100*parseFloat(cost)/parseFloat(cash_buying_rate))/(3-parseFloat(cash_buying_rate)/parseFloat(buying_rate))).toFixed(2);
+// 			var per_income = ((parseFloat(pass_entry)-100*parseFloat(cost)/parseFloat(cash_buying_rate))/(3-parseFloat(cash_buying_rate)/parseFloat(buying_rate))).toFixed(2);
+			var per_income = (parseFloat(total_income)/2).toFixed(2);
 
 			// 100*C4/C3+C6
 			var exchange_amount = (100*parseFloat(cost)/parseFloat(cash_buying_rate)+parseFloat(per_income)).toFixed(2);
