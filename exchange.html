@@ -10,12 +10,13 @@
 			var cash_buying_rate = document.getElementById("cash_buying_rate").value;//C3
 			var cost = document.getElementById("cost").value;//C4
 			var pass_entry = document.getElementById("pass_entry").value;//C5
+			var number_of_people = document.getElementById("number_of_people").value;
 
 			// C5-100*C4/C3
 			var total_income = (parseFloat(pass_entry)-100*parseFloat(cost)/parseFloat(cash_buying_rate)).toFixed(2);
 			// (C5-100*C4/C3)/(3-C3/C2)
 // 			var per_income = ((parseFloat(pass_entry)-100*parseFloat(cost)/parseFloat(cash_buying_rate))/(3-parseFloat(cash_buying_rate)/parseFloat(buying_rate))).toFixed(2);
-			var per_income = (parseFloat(total_income)/2).toFixed(2);
+			var per_income = (parseFloat(total_income)/parseInt(number_of_people)).toFixed(2);
 
 			// 100*C4/C3+C6
 			var exchange_amount = (100*parseFloat(cost)/parseFloat(cash_buying_rate)+parseFloat(per_income)).toFixed(2);
@@ -47,6 +48,10 @@
 		<tr>
 			<td>总收益</td>
 			<td><input id="total_income" type="text" name="total_income">USD</td>
+		</tr>
+		<tr>
+			<td>人&emsp;数</td>
+			<td><input id="number_of_people" type="text" name="number_of_people" value="2">人</td>
 		</tr>
 		<tr>
 			<td>人&emsp;均</td>
